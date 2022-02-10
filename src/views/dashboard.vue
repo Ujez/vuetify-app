@@ -6,7 +6,21 @@
     :items="desserts"
     :items-per-page="5"
     class="elevation-1"
+    @click:row="selectRow"
   ></v-data-table>
+    <v-snackbar
+      v-model="snackbar"
+    >
+      {{ text }}
+        <v-btn
+          color="pink"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+    </v-snackbar>
   </div>
 </template>
 
@@ -15,6 +29,7 @@
   export default {
     data () {
       return {
+          snackbar: false,
         headers: [
           {
             text: 'Dessert (100g serving)',
@@ -112,6 +127,11 @@
         ],
       }
     },
+    methods:{
+        selectRow(){
+            this.snackbar = true
+        }
+    }
   }
 </script>
 
