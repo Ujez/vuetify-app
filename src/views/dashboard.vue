@@ -11,7 +11,7 @@
     <v-snackbar
       v-model="snackbar"
     >
-      {{ text }}
+     You have selected {{ currentItem }}
         <v-btn
           color="pink"
           text
@@ -29,7 +29,8 @@
   export default {
     data () {
       return {
-          snackbar: false,
+        currentItem: '',
+        snackbar: false,
         headers: [
           {
             text: 'Dessert (100g serving)',
@@ -128,8 +129,9 @@
       }
     },
     methods:{
-        selectRow(){
+        selectRow(event){
             this.snackbar = true
+            this.currentItem = event.name
         }
     }
   }
