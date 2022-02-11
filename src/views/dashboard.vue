@@ -14,12 +14,20 @@
           />
      </v-col>
    </v-row>
+   <v-row>
+     <v-col>
+      <EmployeesTable :employees="employees" @select-employee="setEmployee" />
+     </v-col>
+     <v-col>
+      <EventTimeline :timeline="timeline" />
+     </v-col>
+   </v-row>
 
  
 
-    <EmployeesTable :employees="employees" @select-employee="setEmployee" />
+   
 
-    <EventTimeline :timeline="timeline" />
+   
 
     <v-snackbar v-model="snackbar">
       You have selected {{ selectedEmployee.name }},
