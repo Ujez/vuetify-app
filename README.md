@@ -25,7 +25,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### PROJECT REQUIREMENTS
 
-1. All SalesGraphs in a single row
-2. SalesGraph is 1/3 of row width
-3. All StatisticCard in a single row
-4. StatisticCard is 1/4 of row width
+1. EmployeesTable + EventTimeline should be in the same row
+2. EmployeesTable is 2/3 of row width
+3. EventTimeline is 1/3 or row width
