@@ -4,7 +4,12 @@
       <v-col>
         <h1>Signup</h1>
         <v-form>
-          <v-text-field label="Email" type="email"></v-text-field>
+          <v-text-field 
+          label="Email" 
+          type="email" 
+          v-model="email" 
+          :rules="emailRules" 
+          required></v-text-field>
           <v-autocomplete
             label="Which browser do you use?"
             :items="browsers"
@@ -16,7 +21,10 @@
             readonly
           ></v-text-field>
           <v-date-picker v-model="birthday"></v-date-picker>
-          <v-checkbox label="Agree to terms & conditions"></v-checkbox>
+          <v-checkbox 
+          label="Agree to terms & conditions" 
+          v-model="agreeToTerms" 
+          :rules="agreeToTermsRules"></v-checkbox>
           <v-btn type="submit" color="primary">Submit</v-btn>
         </v-form>
       </v-col>
@@ -27,6 +35,10 @@
 <script>
 export default {
   data: () => ({
+      agreeToTerms:false,
+      agreeToTermsRules: [
+          value => !!value || 'You must agree to the terms and conditions to sign up for an account'
+      ],
     birthday: '',
     browsers: ['Chrome', 'Firefox', 'Safari', 'Edge', 'Brave']
   })
