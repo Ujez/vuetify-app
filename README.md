@@ -32,8 +32,15 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### SIGN-UP PAGE REQUIREMENTS
 
+
 1. Input their email address
 2. Select which browser they use
 3. Attach their profile photo
 4. Input their birthday
 5. Agree to terms and conditions
+
+### SIGN-UP VALIDATION
+
+1. Add custom rules
+2. Utilize form resets
+3. Programmatic validation
